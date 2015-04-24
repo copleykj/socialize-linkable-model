@@ -9,7 +9,7 @@ Package.onUse(function(api) {
     api.versionsFrom("1.0.2.1");
 
     api.use([
-        "meteor", "mongo", "underscore", "socialize:base-model@0.1.0", "aldeed:simple-schema@1.3.0",
+        "meteor", "mongo", "underscore", "socialize:base-model@0.1.2", "aldeed:simple-schema@1.3.0",
     ]);
 
     //Add the friend-model files
