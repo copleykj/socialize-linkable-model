@@ -21,8 +21,10 @@ var LinkableTypes = {};
  * @param {String}           type       The name of the type
  * @param {Mongo.Collection} collection The collection where the type of data is stored
  */
-LinkableModel.registerLinkableType = function (model) {
-    LinkableTypes[model.prototype._objectType] = model.prototype._collection;
+LinkableModel.registerLinkableType = function (model, type) {
+    model.prototype._objectType = type;
+
+    LinkableTypes[type] = model.prototype._collection;
 };
 
 /**
