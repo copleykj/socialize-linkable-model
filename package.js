@@ -8,9 +8,8 @@ Package.describe({
 Package.onUse(function(api) {
     api.versionsFrom("1.0.2.1");
 
-    api.use([
-        "meteor", "mongo", "underscore", "socialize:base-model@0.1.2", "aldeed:simple-schema@1.3.0",
-    ]);
+    api.use("socialize:base-model@0.2.0");
+    api.imply("socialize:base-model");
 
     //Add the friend-model files
     api.addFiles("common/linkable-model.js");
