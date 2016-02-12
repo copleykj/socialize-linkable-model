@@ -24,7 +24,7 @@ var LinkableTypes = {};
 LinkableModel.registerLinkableType = function (model, type) {
     model.prototype._objectType = type;
 
-    LinkableTypes[type] = model.prototype._collection;
+    LinkableTypes[type] = model.prototype.getCollection();
 };
 
 /**
