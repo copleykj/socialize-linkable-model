@@ -2,19 +2,25 @@
  * A scaffold for creating models which can link records from one collection to records from many other collections
  * @class LinkableModel
  */
-LinkableModel = BaseModel.extend();
+LinkableModel = {};
 
 /**
  * The database object
  * @returns {Instance} An instance of varying types depending on what the comment linked to
  */
-LinkableModel.prototype.linkedObject = function () {
-    var collection = LinkableModel.getCollectionForRegisteredType(this.objectType);
-    return collection.findOne(this.linkedObjectId);
-};
+var linkableMethods = {
+    linkedObject: function () {
+        var collection = LinkableModel.getCollectionForRegisteredType(this.objectType);
+        return collection.findOne(this.linkedObjectId);
+    }
+}
 
 //a place to store references to the collections where the commentable objects are stored.
 var LinkableTypes = {};
+
+LinkableModel.makeLinkable = function(model) {
+    _.extend(model.prototype, linkableMethods);
+}
 
 /**
  * Register a data type that can be commented on storing its collection so we can find the object later
