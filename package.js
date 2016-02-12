@@ -1,7 +1,7 @@
 Package.describe({
     name: "socialize:linkable-model",
     summary: "A package allowing linking of records in one collection with records from many other collections",
-    version: "0.2.1",
+    version: "0.3.0",
     git: "https://github.com/copleykj/socialize-linkable-model.git"
 });
 
