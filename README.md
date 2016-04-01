@@ -2,7 +2,7 @@
 
 A package enabling the creation of models who's data lives in one collection and is linked to many other collections.
 
-## LinkableModel - Extends BaseModel ##
+## LinkableModel ##
 
 ### Static Methods ###
 

@@ -8,9 +8,6 @@ Package.describe({
 Package.onUse(function(api) {
     api.versionsFrom("1.0.2.1");
 
-    api.use("socialize:base-model@0.3.2");
-    api.imply("socialize:base-model");
-
     //Add the friend-model files
     api.addFiles("common/linkable-model.js");
 
