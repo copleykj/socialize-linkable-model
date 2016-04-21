@@ -8,7 +8,9 @@ Package.describe({
 Package.onUse(function(api) {
     api.versionsFrom("1.0.2.1");
 
-    api.use("socialize:base-model@0.4.0");
+    api.use("ecmascript");
+
+    api.use("socialize:base-model@1.0.0");
 
     api.imply("socialize:base-model");
 
