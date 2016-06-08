@@ -13,5 +13,5 @@ Package.onUse(function(api) {
     api.use(["socialize:base-model@1.0.0"]);
     api.imply(["socialize:base-model"]);
 
-    api.mainModule("common/linkable-model.js");
+    api.mainModule("common/common.js");
 });
