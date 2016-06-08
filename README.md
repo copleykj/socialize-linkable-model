@@ -32,19 +32,19 @@ Like.appendSchema(LinkableModel.LinkableSchema);
 Now that we have a `Like` class which is Linkable, lets create a `Post` class extending `LinkedModel`.
 
 ```javascript
-import { LinkedModel } from 'meteor/socialize:linkable-model';
+import { LinkParent } from 'meteor/socialize:linkable-model';
 import { Mongo } from 'meteor/mongo';
 import { Like } from './like-model';
 
 const PostsCollection = new Mongo.Collection("posts");
 
-export class Post extends LinkedModel {
+export class Post extends LinkParent {
     constructor(document){
         super(document);
     }
 
     like() {
-        //use LinkedModel's getLinkObject() method to get an object with the link information we need
+        //use getLinkObject() method inherited from LinkParent to get an object with the link information we need
         var link = this.getLinkObject();
         //create a new like using the link and save it.
         new Like(link).save();
