@@ -24,7 +24,7 @@ export let LinkableModel = Base => class extends Base {
      *
      * @return {Model}  A model of varying types depending on the linked objects type
      */
-    linkedObject() {
+    linkedParent() {
         let collection = getCollectionForParentLink();
         return collection.findOne(this.linkedObjectId);
     }
