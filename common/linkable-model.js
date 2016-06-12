@@ -39,7 +39,7 @@ LinkableModel.getCollectionForRegisteredType = function(type) {
  * @param {BaseModel}           type       The name of the type
  * @param {Mongo.Collection} collection The collection where the type of data is stored
  */
-LinkableModel.registerLinkableType = function(model) {
+LinkableModel.registerParentModel = function(model) {
     let type = model.prototype.getCollectionName();
 
     model.prototype._objectType = type;
