@@ -11,27 +11,24 @@ export let LinkableModel = Base => class extends Base {
     constructor(document) {
         super(document)
     }
-
-
+    /**
+     * getCollectionForParentLink - Get the collection for the ParentLink
+     *
+     * @return {Mongo.Collection} The Collection attached to the ParentLink
+     */
+    getCollectionForParentLink() {
+        return LinkableTypes[this.objectType];
+    }
     /**
      * linkedObject - Get the model for the linked record
      *
      * @return {Model}  A model of varying types depending on the linked objects type
      */
     linkedObject() {
-        var collection = LinkableModel.getCollectionForRegisteredType(this.objectType);
+        let collection = getCollectionForParentLink();
         return collection.findOne(this.linkedObjectId);
     }
 
-};
-
-/**
- * Get the collection where a data type is stored
- * @param   {String}           type The name of the data type
- * @returns {Mongo.Collection} The Collection where the type of data is stored
- */
-LinkableModel.getCollectionForRegisteredType = function(type) {
-    return LinkableTypes[type];
 };
 
 /**
