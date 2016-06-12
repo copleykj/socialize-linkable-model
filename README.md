@@ -2,6 +2,12 @@
 
 A package enabling the creation of models who's data lives in one collection and is linked to many other collections. As an example, a like would be a linkable type since a like could be attached to a photo, comment, post, or any number of other elements of your app. This package enables you to create these types of relationships and then retrieve the linkable data based on the linked model.
 
+This package is implemented in many of the [Socialize](https://atmospherejs.com/socialize) packages such as, likeable, commentable, and postable. If you're just going to use this package to create this type of functionality you should check out those packages and use them instead.
+
+## Installation ##
+
+`meteor add socialize:linkable`
+
 ## Usage ##
 
 For lack of a better example we will create a `Like` model using `LinkableModel` just as the `likeable` package does.
@@ -32,14 +38,17 @@ Like.appendSchema(LinkableModel.LinkableSchema);
 Now that we have a `Like` class which is Linkable, lets create a `Post` class extending `LinkedModel`.
 
 ```javascript
-import { LinkParent } from 'meteor/socialize:linkable-model';
+import { LinkParent, LinkableModel } from 'meteor/socialize:linkable-model';
 import { Mongo } from 'meteor/mongo';
 import { Like } from './like-model';
 
+//create a place to store our posts
 const PostsCollection = new Mongo.Collection("posts");
 
+//create Post class which extends LinkParent
 export class Post extends LinkParent {
     constructor(document){
+        //call super as required by BaseModel since LinkParent is a decendent of BaseModel.
         super(document);
     }
 
@@ -50,6 +59,9 @@ export class Post extends LinkParent {
         new Like(link).save();
     }
 }
+
+//register Post as a possible parent which can be linked to.
+LinkableModel.registerParentModel(Post);
 ```
 
 # Supporting the Project #
