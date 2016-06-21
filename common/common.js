@@ -1,2 +1,2 @@
-export { LinkableModel } from './linkable-model';
-export { ParentLink } from './link-parent';
+export { LinkableModel} from './linkable-model';
+export { LinkParent } from './link-parent';
