@@ -45,8 +45,8 @@ random@1.0.7
 reactive-var@1.0.7
 retry@1.0.5
 routepolicy@1.0.8
-socialize:base-model@0.4.0
-socialize:linkable-model@0.4.1
+socialize:base-model@1.0.0
+socialize:linkable-model@1.0.0
 socialize:server-time@0.1.2
 spacebars@1.0.9
 spacebars-compiler@1.0.9
