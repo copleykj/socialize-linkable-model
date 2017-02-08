@@ -1,45 +1,47 @@
-/**
- * A scaffold for creating models which can link records from one collection to records from many other collections
- * @class LinkableModel
- */
-LinkableModel = {};
-
-/**
- * The database object
- * @returns {Instance} An instance of varying types depending on what the comment linked to
- */
-var linkableMethods = {
-    linkedObject: function () {
-        var collection = LinkableModel.getCollectionForRegisteredType(this.objectType);
-        return collection.findOne(this.linkedObjectId);
-    }
-}
+import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 
 //a place to store references to the collections where the commentable objects are stored.
-var LinkableTypes = {};
-
-LinkableModel.makeLinkable = function(model) {
-    _.extend(model.prototype, linkableMethods);
-}
+let LinkableTypes = {};
 
 /**
- * Register a data type that can be commented on storing its collection so we can find the object later
- * @param {String}           type       The name of the type
- * @param {Mongo.Collection} collection The collection where the type of data is stored
+ * A scaffold for creating models which can link records from one collection to records from many other collections
+ * @mixin LinkableModel
  */
-LinkableModel.registerLinkableType = function (model, type) {
-    model.prototype._objectType = type;
+export let LinkableModel = Base => class extends Base {
+    constructor(document) {
+        super(document)
+    }
+    /**
+     * getCollectionForParentLink - Get the collection for the ParentLink
+     *
+     * @return {Mongo.Collection} The Collection attached to the ParentLink
+     */
+    getCollectionForParentLink() {
+        return LinkableTypes[this.objectType];
+    }
+    /**
+     * linkedObject - Get the model for the linked record
+     *
+     * @return {Model}  A model of varying types depending on the linked objects type
+     */
+    linkedParent() {
+        let collection = getCollectionForParentLink();
+        return collection.findOne(this.linkedObjectId);
+    }
 
-    LinkableTypes[type] = model.prototype.getCollection();
 };
 
 /**
- * Get the collection where a data type is stored
- * @param   {String}           type The name of the data type
- * @returns {Mongo.Collection} The Collection where the type of data is stored
+ * Register a data type that can be commented on storing its collection so we can find the object later
+ * @param {BaseModel}           type       The name of the type
+ * @param {Mongo.Collection} collection The collection where the type of data is stored
  */
-LinkableModel.getCollectionForRegisteredType = function (type) {
-    return LinkableTypes[type];
+LinkableModel.registerParentModel = function(model) {
+    let type = model.prototype.getCollectionName();
+
+    model.prototype._objectType = type;
+
+    LinkableTypes[type] = model.prototype.getCollection();
 };
 
 LinkableModel.LinkableSchema = new SimpleSchema({
@@ -49,7 +51,6 @@ LinkableModel.LinkableSchema = new SimpleSchema({
     },
     "objectType":{
         type:String,
-        optional:true,
         denyUpdate:true,
     }
 });
