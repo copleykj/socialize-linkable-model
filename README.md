@@ -4,6 +4,11 @@ A package enabling the creation of models who's data lives in one collection and
 
 This package is implemented in many of the [Socialize](https://atmospherejs.com/socialize) packages such as, likeable, commentable, and postable. If you're just going to use this package to create this type of functionality you should check out those packages and use them instead.
 
+## Supporting the Project ##
+In the spirit of keeping this and all of the packages in the [Socialize](https://atmospherejs.com/socialize) set alive, I ask that if you find this package useful, please donate to it's development.
+
+[Bitcoin](https://www.coinbase.com/checkouts/4a52f56a76e565c552b6ecf118461287) / [Patreon](https://www.patreon.com/user?u=4866588) / [Paypal](https://www.paypal.me/copleykj)
+
 ## Installation ##
 
 `meteor add socialize:linkable`
@@ -63,8 +68,3 @@ export class Post extends LinkParent {
 //register Post as a possible parent which can be linked to.
 LinkableModel.registerParentModel(Post);
 ```
-
-# Supporting the Project #
-In the spirit of keeping this and all of the packages in the [Socialize](https://atmospherejs.com/socialize) set alive, I ask that if you find this package useful, please donate to it's development.
-
-[Paypal](https://www.paypal.me/copleykj) /  [Bitcoin](https://www.coinbase.com/checkouts/4a52f56a76e565c552b6ecf118461287)
