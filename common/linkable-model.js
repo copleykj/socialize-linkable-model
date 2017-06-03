@@ -1,4 +1,4 @@
-import { SimpleSchema } from 'meteor/aldeed:simple-schema';
+import SimpleSchema from 'simpl-schema';
 
 //a place to store references to the collections where the commentable objects are stored.
 let LinkableTypes = {};
