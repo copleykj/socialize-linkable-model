@@ -25,9 +25,8 @@ export const LinkableModel = Base => class extends Base {
      */
     linkedParent() {
         const collection = this.getCollectionForParentLink();
-        return collection.findOne(this.linkedObjectId);
+        return collection.findOne({ _id: this.linkedObjectId });
     }
-
 };
 
 /**
