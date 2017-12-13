@@ -70,3 +70,5 @@ export class Post extends LinkParent {
 //register Post as a possible parent which can be linked to.
 LinkableModel.registerParentModel(Post);
 ```
+
+For a more in depth explanation of how to use this package see [API.md](API.md)
