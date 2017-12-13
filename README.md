@@ -28,12 +28,7 @@ import { Mongo } from 'meteor/mongo';
 const LikesCollection = new Mongo.Collection("likes");
 
 //Like extends LinkableModel which in turn extends BaseModel
-export class Like extends LinkableModel(BaseModel){
-    //BaseModel needs the constructor to call super passing in the document
-    constructor(document){
-        super(document);
-    }
-}
+export class Like extends LinkableModel(BaseModel){}
 
 //attach the collection to the model so we get models when we call find and findOne, and we can use BaseModel's CRUD methods.
 Like.attachCollection(LikesCollection);
@@ -42,7 +37,7 @@ Like.attachCollection(LikesCollection);
 Like.appendSchema(LinkableModel.LinkableSchema);
 ```
 
-Now that we have a `Like` class which is Linkable, lets create a `Post` class extending `LinkedModel`.
+Now that we have a `Like` class which is Linkable, lets create a `Post` class extending `LinkParent`.
 
 ```javascript
 import { LinkParent, LinkableModel } from 'meteor/socialize:linkable-model';
@@ -54,11 +49,6 @@ const PostsCollection = new Mongo.Collection("posts");
 
 //create Post class which extends LinkParent
 export class Post extends LinkParent {
-    constructor(document){
-        //call super as required by BaseModel since LinkParent is a decendent of BaseModel.
-        super(document);
-    }
-
     like() {
         //use getLinkObject() method inherited from LinkParent to get an object with the link information we need
         var link = this.getLinkObject();
