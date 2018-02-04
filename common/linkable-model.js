@@ -46,6 +46,7 @@ LinkableModel.LinkableSchema = new SimpleSchema({
     linkedObjectId: {
         type: String,
         regEx: SimpleSchema.RegEx.Id,
+        index: 1,
     },
     objectType: {
         type: String,
