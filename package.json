@@ -21,6 +21,6 @@
     },
     "homepage": "https://github.com/copleykj/socialize-linkable-model#readme",
     "dependencies": {
-        "@socialize/base-model": "^1.0.0"
+        "@socialize/base-model": "^1.0.1"
     }
 }
