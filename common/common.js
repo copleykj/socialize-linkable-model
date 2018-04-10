@@ -2,7 +2,10 @@
 import { BaseModel } from 'meteor/socialize:base-model';
 /* eslint-enable import/no-unresolved */
 
-import LinkParentConstruct from './link-parent';
+import LinkParentConstruct from './link-parent.js';
+import LinkableModelConstruct from './linkable-model.js';
 
-export const LinkParent = LinkParentConstruct(BaseModel);
-export { LinkableModel } from './linkable-model';
+const LinkParent = LinkParentConstruct(BaseModel);
+const LinkableModel = LinkableModelConstruct();
+
+export { LinkableModel, LinkParent };
