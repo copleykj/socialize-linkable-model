@@ -43,10 +43,10 @@ import { LinkParent, LinkableModel } from 'meteor/socialize:linkable-model';
 
 ```javascript
 // React Native Imports
-import { Mongo } from 'meteor/mongo';
-import { BaseModel } from 'meteor/socialize:base-model';
-import { LinkableModel } from 'meteor/socialize:linkable-model';
-import { LinkParent, LinkableModel } from 'meteor/socialize:linkable-model';
+import { Mongo } from '@socialize/react-native-meteor';
+import { BaseModel } from '@socialize/base-model';
+import { LinkableModel } from '@socialize/linkable-model';
+import { LinkParent, LinkableModel } from '@socialize/linkable-model';
 ```
 Now that we have imported our necessary classes for either Meteor or React Native, we can use the following code in both environments.
 
