@@ -86,7 +86,8 @@ export class Post extends LinkParent {
 LinkableModel.registerParentModel(Post);
 ```
 
-For a more in depth explanation of how to use this package see [API.md](API.md)
+For a more in depth explanation of how to use this package see [API.md](api)
 
 [meteor]: https://meteor.com
 [socialize]: https://atmospherejs.com/socialize
+[api]: https://github.com/copleykj/socialize-linkable-model/blob/master/API.md
