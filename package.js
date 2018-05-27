@@ -9,7 +9,7 @@ Package.describe({
 Package.onUse(function _(api) {
     api.versionsFrom('1.3');
 
-    api.use(['socialize:base-model@1.1.2']);
+    api.use(['socialize:base-model@1.1.3']);
     api.imply(['socialize:base-model']);
 
     api.mainModule('common/common.js');
