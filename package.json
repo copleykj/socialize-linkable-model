@@ -1,6 +1,6 @@
 {
     "name": "@socialize/linkable-model",
-    "version": "1.0.0",
+    "version": "1.0.4",
     "description": "Meteor's socialize:linkable-model package ported for React Native",
     "main": "entry-rn.js",
     "scripts": {
@@ -21,6 +21,6 @@
     },
     "homepage": "https://github.com/copleykj/socialize-linkable-model#readme",
     "dependencies": {
-        "@socialize/base-model": "^1.1.0"
+        "@socialize/base-model": "^1.1.4"
     }
 }
