@@ -6,28 +6,34 @@ This package is implemented in many of the [Socialize][socialize] packages such 
 
 >This is a [Meteor][meteor] package with part of it's code published as a companion NPM package made to work with React Native. This allows your Meteor and React Native projects that use this package to share code between them to give you a competitive advantage when bringing your mobile and web application to market.
 
-## Supporting the Project
-In the spirit of keeping this and all of the packages in the [Socialize][socialize] set alive, I ask that if you find this package useful, please donate to it's development.
+<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
+- [Supporting The Project](#supporting-the-project)
+- [Meteor Installation](#meteor-installation)
+- [React Native Installation](#react-native-installation)
+- [Basic Usage](#basic-usage)
+<!-- /TOC -->
 
-Litecoin: LXLBD9sC5dV79eQkwj7tFusUHvJA5nhuD3 / [Patreon](https://www.patreon.com/user?u=4866588) / [Paypal](https://www.paypal.me/copleykj)
+## Supporting The Project
+
+Finding the time to maintain FOSS projects can be quite difficult. I am myself responsible for over 30 personal projects across 2 platforms, as well as Multiple others maintained by the [Meteor Community Packages](https://github.com/meteor-community-packages) organization. Therfore, if you appreciate my work, I ask that you either sponsor my work through GitHub, or donate via Paypal or Patreon. Every dollar helps give cause for spending my free time fielding issues, feature requests, pull requests and releasing updates. Info can be found in the "Sponsor this project" section of the [GitHub Repo](https://github.com/copleykj/socialize-linkable-model)
 
 ## Meteor Installation
 
 ```shell
-$ meteor add socialize:linkable-model
+meteor add socialize:linkable-model
 ```
 
 ## React Native Installation
 
 ```shell
-$ npm install --save @socialize/linkable-model
+npm install --save @socialize/linkable-model
 ```
 
 > **Note**
 >
->  When using with React Native, you'll need to connect to a server which hosts the server side Meteor code for your app using `Meteor.connect` as per the [@socialize/react-native-meteor](https://www.npmjs.com/package/@socialize/react-native-meteor#example-usage) documentation.
+> When using with React Native, you'll need to connect to a server which hosts the server side Meteor code for your app using `Meteor.connect` as per the [@socialize/react-native-meteor](https://www.npmjs.com/package/@socialize/react-native-meteor#example-usage) documentation.
 
-## Usage
+## Basic Usage
 
 For lack of a better example we will create a `Like` model using `LinkableModel` just as the `likeable` package does.
 
@@ -48,6 +54,7 @@ import { BaseModel } from '@socialize/base-model';
 import { LinkableModel } from '@socialize/linkable-model';
 import { LinkParent, LinkableModel } from '@socialize/linkable-model';
 ```
+
 Now that we have imported our necessary classes for either Meteor or React Native, we can use the following code in both environments.
 
 ```javascript
