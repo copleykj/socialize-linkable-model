@@ -1,6 +1,6 @@
 {
     "name": "@socialize/linkable-model",
-    "version": "1.0.5",
+    "version": "1.0.6",
     "description": "Meteor's socialize:linkable-model package ported for React Native",
     "main": "entry-rn.js",
     "scripts": {
